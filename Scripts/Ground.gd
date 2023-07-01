@@ -1,12 +1,12 @@
 extends Node2D
 
-@export var num_hills = 2
-@export var slice = 10
-@export var hill_range = 150
+@export var num_hills = 1
+@export var slice = 150
+@export var hill_range = 300
 
 var screensize
 var terrain = Array()
-var texture = preload("res://Sprites/Mountain.jpg")
+var texture = preload("res://Sprites/Mountain.png")
 
 func _ready():
 	randomize()
