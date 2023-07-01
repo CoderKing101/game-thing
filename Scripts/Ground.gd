@@ -17,7 +17,7 @@ func _ready():
 	add_hills()
 
 func _process(delta):
-	if terrain[-1].x < get_node("/root/Main/Player").position.x + screensize.x / 2:
+	if terrain[-1].x < get_node("/root/Main/Player").position.x + screensize.x:
 		add_hills()
 
 func add_hills():

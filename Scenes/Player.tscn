@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://bfx20edf50cqi"]
 
-[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_u7owx"]
+[ext_resource type="Script" path="res://Scenes/Player.gd" id="1_diceg"]
 [ext_resource type="Texture2D" uid="uid://dejj0f6nnm4yv" path="res://Sprites/Player.png" id="2_d7g57"]
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
-script = ExtResource("1_u7owx")
+script = ExtResource("1_diceg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.75, 0.75)
