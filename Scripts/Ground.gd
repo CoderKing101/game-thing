@@ -6,6 +6,7 @@ extends Node2D
 
 var screensize
 var terrain = Array()
+var texture = preload("res://Sprites/Mountain.jpg")
 
 func _ready():
 	randomize()
@@ -31,12 +32,18 @@ func add_hills():
 			var hill_point = Vector2()
 			hill_point.x = start.x + j * slice + hill_width * i
 			hill_point.y = start.y + height * cos(2 * PI / hill_slices * j)
-			$Line2D.add_point(hill_point)
+			#$Line2D.add_point(hill_point)
 			terrain.append(hill_point)
 			poly.append(hill_point)
 		start.y += height
 	var shape = CollisionPolygon2D.new()
+	var ground = Polygon2D.new()
 	$StaticBody2D.add_child(shape)
 	poly.append(Vector2(terrain[-1].x, screensize.y))
 	poly.append(Vector2(start.x, screensize.y))
 	shape.polygon = poly 
+	ground.polygon = poly
+	ground.texture_repeat = CanvasItem.TEXTURE_REPEAT_ENABLED 
+	ground.texture_filter = CanvasItem.TEXTURE_FILTER_PARENT_NODE
+	ground.texture = texture
+	add_child(ground)

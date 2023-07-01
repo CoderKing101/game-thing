@@ -1,19 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://viab31ob46vi"]
+[gd_scene load_steps=3 format=3 uid="uid://bfx20edf50cqi"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_u7owx"]
 [ext_resource type="Texture2D" uid="uid://dejj0f6nnm4yv" path="res://Sprites/Player.png" id="2_d7g57"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x8p23"]
-size = Vector2(128, 128)
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_u7owx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_d7g57")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_x8p23")
-
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-36, 128, 28, 128, 28, 114, 20, 114, 20, 90, 24, 86, 26, 82, 20, 76, 20, 54, 26, 48, 40, 50, 58, 50, 60, 20, 66, 14, 64, 4, 58, 2, 52, -30, 56, -34, 56, -40, 46, -50, 38, -52, 38, -102, 36, -114, 26, -128, 12, -134, 10, -142, 0, -144, -10, -144, -16, -138, -16, -134, -26, -130, -36, -120, -40, -108, -40, -54, -56, -46, -62, -34, -56, -30, -62, 2, -66, 4, -70, 8, -70, 12, -66, 20, -64, 20, -64, 52, -44, 50, -34, 46, -28, 54, -28, 76, -34, 80, -34, 84, -32, 88, -28, 90, -28, 114, -36, 114)
