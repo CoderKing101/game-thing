@@ -16,7 +16,7 @@ func _ready():
 	terrain.append(Vector2(0, start_y))
 	add_hills()
 
-func _process(delta):
+func _process(_delta):
 	if terrain[-1].x < get_node("/root/Main/Player").position.x + screensize.x:
 		add_hills()
 
